@@ -58,7 +58,7 @@ L.easyButton(
 
 function drawPoints() {
   $.getJSON(
-    "https://sheets.googleapis.com/v4/spreadsheets/1uzopEjewC2NW9-V8cPnYwJw9PiDC43jSn0N24AYGcXs/values/JobOpenings!A2:G3000?majorDimension=ROWS&key=AIzaSyBLXEpytk-oR9ihfTTT6oZiJJ_vd1WytBM",
+    "https://sheets.googleapis.com/v4/spreadsheets/1hKfu2_657_VliF3w9bysbuaC-OWTVr3KglWAcH6KncE/values/JobOpenings!A2:G3000?majorDimension=ROWS&key=AIzaSyD4O-YQigwB9BpkAAuynlJ51_3vTFktAxw",
     function (response) {
       // lyrMarkerCluster.clearLayers();
       response.values.forEach(drawMarker);
@@ -66,6 +66,9 @@ function drawPoints() {
       function drawMarker(element) {
         var id = element[0];
         var city = element[1];
+
+        console.log(city);
+
         var state = element[2];
         var schoolName = element[3];
 
@@ -138,7 +141,7 @@ drawPoints();
 // start loading Schools points
 function drawSchoolsPoints() {
   $.getJSON(
-    "https://sheets.googleapis.com/v4/spreadsheets/1uzopEjewC2NW9-V8cPnYwJw9PiDC43jSn0N24AYGcXs/values/Schools!A2:G3000?majorDimension=ROWS&key=AIzaSyBLXEpytk-oR9ihfTTT6oZiJJ_vd1WytBM",
+    "https://sheets.googleapis.com/v4/spreadsheets/1hKfu2_657_VliF3w9bysbuaC-OWTVr3KglWAcH6KncE/values/Schools!A2:G3000?majorDimension=ROWS&key=AIzaSyD4O-YQigwB9BpkAAuynlJ51_3vTFktAxw",
     function (response) {
       // lyrMarkerCluster.clearLayers();
       response.values.forEach(drawMarker);
