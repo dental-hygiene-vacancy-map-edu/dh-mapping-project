@@ -58,7 +58,7 @@ L.easyButton(
 
 function drawPoints() {
   $.getJSON(
-    "https://sheets.googleapis.com/v4/spreadsheets/1hKfu2_657_VliF3w9bysbuaC-OWTVr3KglWAcH6KncE/values/JobOpenings!A2:G3000?majorDimension=ROWS&key=AIzaSyD4O-YQigwB9BpkAAuynlJ51_3vTFktAxw",
+    "https://sheets.googleapis.com/v4/spreadsheets/1hKfu2_657_VliF3w9bysbuaC-OWTVr3KglWAcH6KncE/values/JobOpenings!A2:H3000?majorDimension=ROWS&key=AIzaSyD4O-YQigwB9BpkAAuynlJ51_3vTFktAxw",
     function (response) {
       // lyrMarkerCluster.clearLayers();
       response.values.forEach(drawMarker);
@@ -67,7 +67,7 @@ function drawPoints() {
         var id = element[0];
         var city = element[1];
 
-        console.log(city);
+        
 
         var state = element[2];
         var schoolName = element[3];
@@ -77,13 +77,14 @@ function drawPoints() {
 
         var website = element[6];
 
+        var agency = element[7];
+
         // var companyName = element[0];
 
-        var accountType = element[1];
-        var accountTypeSmallLetters = accountType
+        var agencySmallLetters = agency
           .toLowerCase()
           .replace(/\s/g, "-");
-        accountTypeSmallLetters = accountTypeSmallLetters
+          agencySmallLetters = agencySmallLetters
           .replaceAll(",", "")
           .replaceAll("/", "-");
 
@@ -99,6 +100,11 @@ function drawPoints() {
           state +
           "</span></div>";
 
+          popupContent +=
+          "<div><span class='popup-title'>Agency: </span><span class='popup-value'>" +
+          agency +
+          "</span></div>";
+
         popupContent +=
           "<p class='website-link'><i class='fa fa-external-link' aria-hidden='true'></i> <a target='_blank' href='" +
           website +
@@ -109,7 +115,7 @@ function drawPoints() {
         popupContent += "</div>";
 
         var ipbIcon = L.icon({
-          iconUrl: "images/dentist.svg",
+          iconUrl: "images/" + agencySmallLetters + ".svg",
           iconSize: [18, 18],
           popupAnchor: [3, -10],
         });
@@ -121,7 +127,7 @@ function drawPoints() {
         // $(point._icon).addClass(accountTypeSmallLetters);
         $(point._icon).attr(
           "data-first-type",
-          "first-jobopenings"
+          "first-" + agencySmallLetters + "-jobopenings"
         );
         $(point._icon).attr("data-first-type-visible", "true");
         lyrMarkerJobOpeningsCluster.addLayer(point);
@@ -233,8 +239,20 @@ xhttp.onreadystatechange = function () {
     /// legend ////
     var legendPolygonsItemsAll = [
       {
-        range: "Job Openings",
-        icon: "dentist",
+        range: "IHS Job Openings",
+        icon: "ihs",
+      },
+      {
+        range: "BOP Job Openings",
+        icon: "bop",
+      },
+      {
+        range: "IHSC Job Openings",
+        icon: "ihsc",
+      },
+      {
+        range: "Coast Guard Job Openings",
+        icon: "coast-guard",
       },
       {
         range: "Schools",
