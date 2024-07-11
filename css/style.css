@@ -67,11 +67,12 @@ div.legend-industry-logo{
     text-align: left;
     line-height: 28px;
     color: #555;
-    width: 205px;
+    width: 308px;
+    height: 240x;
 }
 
 .legend b {
-    width: 171px;
+    width: 272px;
     height: 18px;
     float: right;
     margin-right: 8px;
@@ -111,12 +112,13 @@ fieldset{
   }
 
   span.anchor {
-    width: 56px;
+    width: 115px;
   }
   .dropdown-check-list {
     width: 117px;
   }
   fieldset{
+    width: 176px;
     background-color: #ffffff;
   position: absolute;
   border: 2px solid #ccc;
@@ -165,7 +167,7 @@ fieldset{
     margin: 0;
     border: 1px solid #ccc;
     border-top: none;
-    width: 112px;
+    width: 171px;
   }
   
   .dropdown-check-list ul.items li {
