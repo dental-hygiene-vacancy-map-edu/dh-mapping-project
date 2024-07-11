@@ -65,9 +65,7 @@ function drawPoints() {
 
       function drawMarker(element) {
         var id = element[0];
-        var city = element[1];
-
-        
+        var city = element[1];        
 
         var state = element[2];
         var schoolName = element[3];
@@ -239,23 +237,27 @@ xhttp.onreadystatechange = function () {
     /// legend ////
     var legendPolygonsItemsAll = [
       {
-        range: "IHS Job Openings",
+        range: "Indian Health Service (IHS)",
         icon: "ihs",
       },
       {
-        range: "BOP Job Openings",
+        range: "Federal Bureau of Prisons (BOP)",
         icon: "bop",
       },
       {
-        range: "IHSC Job Openings",
+        range: "Immigrations Customs Enforcement (ICE)",
+        icon: "ice",
+      },
+      {
+        range: "Health Service Corps (IHSC)",
         icon: "ihsc",
       },
       {
-        range: "Coast Guard Job Openings",
+        range: "U.S. Coast Guard (CG)",
         icon: "coast-guard",
       },
       {
-        range: "Schools",
+        range: "Accredited Dental Hygiene Schools/Programs",
         icon: "schools",
       }
     ];
