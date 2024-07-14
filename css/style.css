@@ -72,14 +72,15 @@ div.legend-industry-logo{
 }
 
 .legend b {
-    width: 272px;
-    height: 18px;
-    float: right;
-    margin-right: 8px;
-    margin-left:5px;
-    opacity: 1;
-    padding-top: 0;
-    margin-top:0;
+  line-height: 13px;
+  width: 272px;
+  height: 18px;
+  float: right;
+  margin-right: 8px;
+  margin-left: 5px;
+  opacity: 1;
+  padding-top: 0;
+  margin-top: 4px;
 }
 
 img{
