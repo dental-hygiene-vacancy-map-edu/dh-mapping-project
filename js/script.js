@@ -245,11 +245,7 @@ xhttp.onreadystatechange = function () {
         icon: "bop",
       },
       {
-        range: "Immigrations Customs Enforcement (ICE)",
-        icon: "ice",
-      },
-      {
-        range: "Health Service Corps (IHSC)",
+        range: "Immigration & Customs Enforcement (ICE), Health Service Corps (IHSC)",
         icon: "ihsc",
       },
       {
